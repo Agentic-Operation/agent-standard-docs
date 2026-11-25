@@ -1,2 +1,2 @@
-# agent-standard-docs
+# Agent Standards Documentation
 Published communication package / docs site (the pack canonical in agent-profile-management/docs/communication/ moves here; spec repos link to it)
