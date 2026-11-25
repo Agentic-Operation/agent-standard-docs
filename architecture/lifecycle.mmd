@@ -1,0 +1,8 @@
+%% Lifecycle verbs → artifacts (canonical in agent-profile-management)
+flowchart LR
+    D["DEFINE<br/>Spec-443 profile<br/>classification, scope, capabilities,<br/>security, metrics"] --> S["SOURCE<br/>Spec-445 card + registry<br/>discovery, integrity, sourcing checklist"]
+    S --> O["ONBOARD<br/>Spec-444 bootstrap<br/>scaffold, bind skills/tools/models,<br/>security injection, hooks"]
+    O --> A["ADMINISTER<br/>all three artifacts<br/>status, maintenance, drift, autonomy certs,<br/>per-env rollout state (Spec-444/445 ext)"]
+    A -->|"change → re-validate (3-stage CI)"| D
+    M["Model Management Authority"] -.->|"model_ref resolution + re-cert triggers"| O
+    M -.->|"re-certification on model change"| A
