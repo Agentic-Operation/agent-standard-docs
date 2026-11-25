@@ -1,0 +1,9 @@
+{
+  "config": {
+    "default": true,
+    "MD013": false,   // long lines allowed in tables/diagrams
+    "MD033": false,   // inline HTML allowed
+    "MD041": false,   // first-line-heading not enforced
+    "MD060": false    // compact table delimiter rows (|---|) are the house style
+  }
+}

@@ -1,0 +1,17 @@
+name: docs-lint
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**', '*.md', '.github/**']
+  pull_request:
+    paths: ['docs/**', '*.md', '.github/**']
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npx markdownlint-cli2 "**/*.md" "#node_modules"
+# Phase 1 adds ci-gate.yml running the conformance-kit schema + cross-check validators.

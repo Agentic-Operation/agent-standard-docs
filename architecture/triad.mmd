@@ -1,0 +1,17 @@
+%% Triad architecture — mermaid flowchart (canonical in agent-profile-management)
+flowchart LR
+    subgraph ORG[Agentic-Operation org]
+        P["Spec-443 Profile<br/>agent-profile-management<br/>DEFINE: what the agent is"]
+        B["Spec-444 Bootstrap<br/>agent-bootstrap-management<br/>ONBOARD: build, tool, secure, run"]
+        C["Spec-445 Card<br/>agent-discovery-card<br/>SOURCE: discover, verify, call"]
+    end
+    M["Model Management Authority<br/>model records: id/uuid/version/CID,<br/>provenance, eval evidence, risk class, policy"]
+    R["Agent registry / WoA mesh<br/>/.well-known/woa.json"]
+    ENV["Environment instances<br/>dev / stage / prod<br/>(Spec-444 inventory record + Spec-445 environment-instances)"]
+    P <-->|"id, uuid, version, provider, CID, integrity_wrapper<br/>skill_id string joins, bidirectional refs"| B
+    B <-->|same join keys| C
+    P <-->|same join keys| C
+    M -->|"model_bindings / model_ref resolved<br/>to pinned signed version"| B
+    C -->|"cards registered, discoverable"| R
+    B -->|"per-env deploy + inventory"| ENV
+    C -->|"environment-instances[]"| ENV
