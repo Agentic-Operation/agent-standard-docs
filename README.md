@@ -1,4 +1,4 @@
-# agent-standard-docs
+# Agent Standard Docs
 
 Published communication package / docs site for the agent triad (Spec-443 / Spec-444 / Spec-445).
 Canonical home of the comms pack — the spec repos link here (see `index.md`).
