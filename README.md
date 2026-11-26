@@ -5,4 +5,4 @@ Canonical home of the comms pack — the spec repos link here (see `index.md`).
 
 - Spec repos: agent-profile-management (Spec-443), agent-bootstrap-management (Spec-444), agent-discovery-card (Spec-445)
 - Service repos: Agent-Registry, model-authority, agent-rollout-controller, agent-orchestrator, tool-mcp-manager, agent-conformance
-- License: Apache-2.0
+- License: MIT (see the repository `LICENSE` file)

@@ -1,14 +1,16 @@
-# Agentic Operation
-## Agentic AI Management Standards: define, onboard, discover, orchestrate, and govern AI agents
+# Agentic Operations
 
-AI agents are becoming operational actors in every enterprise, used by internal staff, exposed to
-partners and customers, and increasingly invoked by other agents. **Agentic Operation** is the home of
-the **Agentic AI Management Standards**: an open, machine-readable standard, plus reference runtime
-services, for managing AI agents as first-class, governed members of an organization across their entire
-lifecycle.
+## Enterprise operating model
 
-The ambition: run AI agents **at speed and scale** while the organization always knows **which agents
-exist, what they may do, which models and tools they use, where they run, and why they can be trusted**.
+Agentic Operations is the enterprise operating model through which an organization organizes, governs, executes, measures and continuously improves its work using coordinated human and non-human agents operating within defined intent, context, authority, constraints and accountability.
+
+It connects enterprise outcomes, value streams, people, processes, information, technology and governance with the operational mechanisms through which agents are specified, enabled, discovered, orchestrated and assured. The enterprise operating model is broader than the management of AI agents: it defines why and where agentic ways of working are adopted, how they are governed, and how their contribution is measured and improved.
+
+## Agentic AI Management Standards
+
+AI agents are becoming operational actors in enterprises, used by internal staff, exposed to partners and customers, and increasingly invoked by other agents. The Agentic AI Management Standards provide an open, machine-readable management layer for defining, onboarding, discovering, orchestrating and governing AI agents as accountable participants in enterprise work.
+
+The ambition is to enable AI agents to operate at speed and scale while the organization can establish which agents exist, what they may do, which models and tools they use, where they are authorized to run, and what evidence supports trust in their operation.
 
 ## The standard at a glance: one agent, three contracts (the "agent triad")
 
@@ -30,24 +32,26 @@ transparency-log signing.
 
 ## Repository map
 
-**Standards: the normative contracts**
+### Normative specifications (draft)
 
-- [agent-profile-management](https://github.com/Agentic-Operation/agent-profile-management) - Spec-443: profile schema, worked examples, conformance kit, publication/validation API and `spec443` CLI
-- [agent-bootstrap-management](https://github.com/Agentic-Operation/agent-bootstrap-management) - Spec-444: bootstrap schema, per-environment `environments[]` overrides, scaffold/deploy API and `spec444` CLI
-- [agent-discovery-card](https://github.com/Agentic-Operation/agent-discovery-card) - Spec-445: card schema (additive over A2A), Agent Card Registry API, WoA discovery, `spec445` CLI
+- [agent-profile-management](https://github.com/Agentic-Operation/agent-profile-management) - Spec-443 normative draft v1.0.0-alpha: profile schema, worked examples, conformance kit, publication/validation API and `spec443` CLI
+- [agent-bootstrap-management](https://github.com/Agentic-Operation/agent-bootstrap-management) - Spec-444 normative draft v1.0.0-alpha: bootstrap schema, per-environment `environments[]` overrides, scaffold/deploy API and `spec444` CLI
+- [agent-discovery-card](https://github.com/Agentic-Operation/agent-discovery-card) - Spec-445 normative draft v1.0.0-alpha: card schema (additive over A2A), Agent Card Registry API, WoA discovery, `spec445` CLI
 
-**Runtime services: reference implementations of the contracts**
+### Runtime services: reference implementations
 
-- [agent-registry](https://github.com/Agentic-Operation/agent-registry) - production Agent Card Registry: card register/search/versions/verify, environment-instances, WoA at `/.well-known/woa.json` (`:8080`)
+- [agent-registry](https://github.com/Agentic-Operation/agent-registry) - Agent Card Registry reference service: card register/search/versions/verify, environment-instances, WoA at `/.well-known/woa.json` (`:8080`)
 - [model-authority](https://github.com/Agentic-Operation/model-authority) - governed model records (id/uuid/version/CID, provenance, eval evidence, license, risk class, approved environments); `resolve` pins `model_ref` → CID; deprecation fires re-certification webhooks (`:8090`)
 - [agent-rollout-controller](https://github.com/Agentic-Operation/agent-rollout-controller) - per-environment deploy with override merge, lifecycle hooks, §6.3 inventory record, rollback, card environment-instance sync (`:8091`)
 - [tool-mcp-manager](https://github.com/Agentic-Operation/tool-mcp-manager) - registers MCP servers and tool bindings from Spec-444 §3; tracks auth scopes and health (`:8092`)
 - [agent-orchestrator](https://github.com/Agentic-Operation/agent-orchestrator) - swarm/hierarchical control plane: Spec-443 §6.4 topology, Spec-444 §4 protocol handlers (a2a_jsonrpc / rep / wo_a / mcp), pub/sub coordination variables, sensitivity signals, per-agent autonomy and outcome metrics (`:8093`)
 - [agent-conformance](https://github.com/Agentic-Operation/agent-conformance) - canonical validators, triad cross-check C1-C20, stage-3 runtime integrity check, CI gate templates (`run-all.sh`)
 
-**Documentation**
+### Documentation
 
 - [agent-standard-docs](https://github.com/Agentic-Operation/agent-standard-docs) - canonical communication pack / docs site: triad overview, audience one-pagers, model authority, glossary, FAQ, conformance cheat-sheet, worked example, architecture diagrams, references
+
+The repositories listed below provide reference implementations and local run instructions. Their ports are local run defaults, not public service endpoints or availability guarantees. Repository presence and successful CI do not establish that a service is deployed, reachable, production-ready or operationally supported.
 
 ## The governed agent lifecycle
 
@@ -85,4 +89,4 @@ transparency-log signing.
 ## Contributing
 
 Each repository has its own `CONTRIBUTING.md` (branch convention `vibe/<slug>-…`, draft PRs, conformance-gated CI).
-All repositories in this organization are public and licensed **Apache-2.0**.
+This repository is licensed under the MIT License. Licences are repository-specific; consult each repository's `LICENSE` file before reuse.
