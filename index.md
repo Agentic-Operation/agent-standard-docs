@@ -28,7 +28,7 @@ link here instead of keeping their own copies.
 - [communication/01..04](communication/) — audience one-pagers: define / onboard / source / administer
 - [communication/05-model-management-authority.md](communication/05-model-management-authority.md) — model → skill → agent → environment
 - [communication/06-glossary.md](communication/06-glossary.md) · [07-faq.md](communication/07-faq.md) · [08-conformance-cheat-sheet.md](communication/08-conformance-cheat-sheet.md) · [09-worked-example-walkthrough.md](communication/09-worked-example-walkthrough.md)
-- [communication/10-org-landing-page.md](communication/10-org-landing-page.md) — proposed README for the GitHub organization landing page (`github.com/Agentic-Operation`), ready to drop into `.github/profile/README.md`
+- [communication/10-org-landing-page.md](communication/10-org-landing-page.md) - proposed README for the GitHub organization landing page (`github.com/Agentic-Operation`), ready to drop into `.github/profile/README.md`
 - [architecture/](architecture/) — mermaid triad + lifecycle diagrams
 - [references/REFERENCES.md](references/REFERENCES.md) — related sources + authority precedence
 - [services/](services/) — runtime service layer notes
